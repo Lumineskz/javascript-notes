@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="hello">This is hello</h1>
+    <p id="hi">This is Hi</p>
+    <div class="mydiv"></div>
+    <script>
+        const id = document.getElementById("hi")
+        const classes = document.querySelector(".hello")
+        classes.innerHTML = "Hello";
+        id.textContent = "Meow"
+        id.style.color = "red"
+        classes.style.backgroundColor = "lightblue"
+        mydiv.classList.add("highlight nepal")
+    </script>
+    <!-- innerHTML vs textContent vs innerText -->
+</body>
+</html>
+<!-- InnerHTML, innerText textContent-->

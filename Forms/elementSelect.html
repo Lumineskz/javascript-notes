@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form">
+    <h2>Form Submission</h2>
+    <form action="">
+        <label for="">Name:</label><br>
+        <input type="text" required><br>
+        <label for="">Phone:</label><br>
+        <input type="number" required pattern="[0-9]{10}"><br>
+        <label for="">E-mail:</label><br>
+        <input type="email" required><br>
+        <label for="">Password:</label><br>
+        <input type="password" required><br>
+        <input type="submit" name="" id="submit" onsubmit="submitForm()">
+        <input type="reset" name="" id="reset">
+    </form>
+    <div style="color:green; font-weight: bold;" id="submitted"></div>
+</div>
+<script>
+    // Function to validate the form on submission
+    function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Get input values
+        const name = document.querySelector('input[type="text"]').value.trim();
+        const phone = document.querySelector('input[type="number"]').value.trim();
+        const email = document.querySelector('input[type="email"]').value.trim();
+        const password = document.querySelector('input[type="password"]').value.trim();
+
+        // Validation messages
+        if (!name) {
+            alert("Name field cannot be empty.");
+            return;
+        }
+        if (!phone.match(/^\d{10}$/)) {
+            alert("Phone number must be 10 digits.");
+            return;
+        }
+        if (!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            return;
+        }
+
+        // If all validations pass
+        document.getElementById("submitted").innerHTML = "Submitted Successfully";
+    }
+
+    // Attach the submit event listener to the form
+    const form = document.querySelector('form');
+    form.addEventListener('submit', submitForm);
+</script>
+
+</body>
+</html>

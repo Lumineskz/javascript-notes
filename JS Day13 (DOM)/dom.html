@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <div class="nepal">This is nepal</div>
+    <div class="nepal">This is nepal</div>
+    <div id="kathmandu">This is Kathmandu</div>
+    <img src="image.jpg" alt="This is an alt text">
+    <a href="https://www.abc.com">This is anchor text</a>
+    <script>
+      const myId = document.getElementById("kathmandu");
+      console.log(myId);
+      const className = document.getElementsByClassName("nepal");
+      console.log(className);
+      const myTag = document.getElementsByTagName("h1");
+      console.log(myTag);
+      const myNP = document.querySelector(".nepal") // To select elements write directly its alphabets eg. "p"
+      // To select ID write the ID name with # eg: "#kathmandu" and class name with . eg: ".nepal"
+      // Query selector 
+      console.log(myNP);
+      const myDiv = document.querySelectorAll("div");
+      console.log(myDiv);
+    </script>
+</body>
+</html>
